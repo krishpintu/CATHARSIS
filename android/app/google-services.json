@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "481102936457",
+    "firebase_url": "https://catharsis-e7a1d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "catharsis-e7a1d",
+    "storage_bucket": "catharsis-e7a1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481102936457:android:791ac42cad266d6c15c958",
+        "android_client_info": {
+          "package_name": "com.catharsis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481102936457-nbbble61e2uk1e4m19hl61k1hccgudj8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.catharsis",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "481102936457-7ocfmj8ebivvqccl2rcb1ugi05v7pct8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcSRXNNFd3MVyD6lgPeWsf9NuggOvEi2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481102936457-7ocfmj8ebivvqccl2rcb1ugi05v7pct8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
