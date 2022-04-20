@@ -108,4 +108,57 @@ Lastly, execute the plugin by adding the following to your /android/app/build.gr
 apply plugin: "com.android.application"
 apply plugin: "com.google.gms.google-services" // <- Add this line
 
+=================================================================================================================
+
+Development Firebase
+---------------------------
+1. run cd android && gradlew signingReport. (command output shows above)
+2. Copy the SHA-1 hash and paste it into the firebase console under Android in Project Settings.
+3. Download the google-services.json file from the Firebase settings and paste the file into android/app
+4. Use the client client_type: 3 clientId inside the config.
+
+
+Production/Release version
+--------------------------
+1. Go to the Google Play console and copy SHA-1 key from Release -> Setup -> App Integrity
+2. Go to Google Cloud Platform Console and click Create Credentials -> OAuthClientID. Choose type Android and paste the hash and fill in the form
+3. Create another Client by clicking Create Credentials, but choose type Web application this time.
+4.Use the webclient in your code
+
+create the debug & release key fingerprints by using the app/build.gradle -> signingConfigs -> debug
+-------------------------------------------------------------------------------------------------------
+$ keytool -list -v -keystore android/app/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+$ keytool -list -v -keystore android/app/release.keystore -alias androidrelease-aliaskey -storepass android -keypass android
+
+
+
+----------------
+Facebook config
+-------------------
+https://developers.facebook.com/docs/android/getting-started/#client-access-token
+
+Update Your Manifest
+Add your App ID and Client Access Token to your project's string file and update the manifest file. Do the following:
+
+Open the /app/res/values/strings.xml file in your app project.
+
+Add string elements with the names facebook_app_id and facebook_client_token, and set the values to your App ID and Client Access Token. For example, if your app ID is 1234 and your client access token is 56789 your code looks like the following:
+
+<string name="facebook_app_id">1234</string>
+<string name="facebook_client_token">56789</string>   /// to get Access Token -On the Dashboard, navigate to Settings > Advanced > Security > Client token.
+Open the /app/manifests/AndroidManifest.xml file in your app project.
+
+Add meta-data elements to the application element for your app ID and client access token:
+
+<application android:label="@string/app_name" ...>
+    ...
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+    ...
+</application>
+Add a uses-permission element to the manifest after the application element:
+
+<uses-permission android:name="android.permission.INTERNET"/>
+Build your project.
 
