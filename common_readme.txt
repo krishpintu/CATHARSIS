@@ -1,3 +1,27 @@
+---------------------------------------------Resolve Reanimated 2 failed to create a worklet-------------------------------------------------------
+1) added import 'react-native-gesture-handler' to App.tsx file at the top of the file before importing any packages
+2) You should update the babel.config.js file and add react-native-reanimated/plugin to plugins
+module.exports = {
+  presets: ["module:metro-react-native-babel-preset"],
+  plugins: ['react-native-reanimated/plugin'], 
+     // this should be always last line
+};
+3) The last thing you should do is run your project by removing the cache yarn start --reset-cache or npx react-native start --reset-cache
+
+4) Plug Reanimated in MainApplication.java. This file is present in android/app/src/main/java/com/appname folder.
+
+import com.facebook.react.bridge.JSIModulePackage; // << add
+import com.swmansion.reanimated.ReanimatedJSIModulePackage; // << add
+  ...
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+  ...
+-----------------------------------------------------------------------------------------------------------------------------
+
+---------------------------Resolve “"RNSScreen" was not found in the UIManager.-------------------------------------------------------------------------
+npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 Debug APK
 ----------
 How to generate one in 3 steps?
